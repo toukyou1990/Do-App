@@ -21,8 +21,6 @@ struct ContentView: View {
                 .scaleEffect(configuration.isPressed ? 0.85 : 1)
         }
     }
-
-
     var body: some View {
 
         ZStack() {
@@ -69,13 +67,9 @@ struct ContentView: View {
                         .scaledToFit()
                 }
                 .buttonStyle(ScaleButtonStyle())
-
-
         }
     }
-
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

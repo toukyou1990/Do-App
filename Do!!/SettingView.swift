@@ -13,33 +13,59 @@ struct SettingView: View {
     var body: some View {
 
         NavigationView {
+
             Form {
                 Section(header: Text("About")) {
-                NavigationLink(destination: WorkThroughView()) {
 
+                    NavigationLink(destination: WorkThroughView()) {
+                        HStack {
+                            Text("About Do!!")
+                        }}
+                        .sheet(isPresented: $showingModal) {
+                            WorkThroughView()
+                        }
                     HStack {
-                        Text("About Do!!")
-                    }}
-                    .sheet(isPresented: $showingModal) {
-                        WorkThroughView()
+                        Text("Version")
+                        Spacer()
+                        Text("1.0.0")
+                            .foregroundColor(Color.gray)
                     }
-                HStack {
-                    Text("Version")
-                    Spacer()
-                    Text("1.0.0")
-                        .foregroundColor(Color.gray)
-                }
                 }
 
                 Section(header: Text("SUPPORT")) {
-                    
-
-                    Text("Request Email" )
-                    Text("Twitter")
-                    Text("Review")
+                    HStack{
+                        Image("IconMail")
+                            .padding(.vertical, 8.0)
+                        Text("Request Form")
+                        if let url = URL(string: "https://docs.google.com/forms/d/1-ltOfGcZe9BcQDmXj7caEtvY8rLrNy5nZiukTFi92Yc/") {
+                            Link("",destination: url)
+                        }
+                    }
+                    HStack{
+                        Image("IconTwitter")
+                            .padding(.vertical, 8.0)
+                        HStack{
+                            Text("Twitter")
+                            Spacer()
+                            Text("@re_notty")
+                                .font(.callout)
+                                .foregroundColor(Color.gray)
+                            if let url = URL(string: "https://twitter.com/re_notty") {
+                                Link("",destination: url)
+                            }
+                        }
+                    }
+                    HStack{
+                        Image("IconHeart")
+                            .padding(.vertical, 8.0)
+                        Text("Review")
+                        if let url = URL(string: "https://レビューのURL") {
+                            Link("",destination: url)
+                        }
+                    }
                 }
             }
-            .navigationBarTitle("Other", displayMode: .inline)
+            .navigationBarTitle("About Do!!", displayMode: .large)
             .navigationBarItems(trailing:
                                     Button(action: {
                                         self.presentationMode.wrappedValue.dismiss()

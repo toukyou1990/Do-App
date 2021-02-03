@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct WorkThroughView: View {
+
     var body: some View {
+
         VStack {
             ScrollView {
                 Text("Just Do It!!")
                     .font(.system(size: 56, weight: .bold, design: .rounded))
                 Spacer()
-                    .frame(height: 50)
+                    .frame(height: 30)
                 AnnounceView()
             }
             Spacer()
-            DoneButton()
+
         }
-        .padding(EdgeInsets(top: 40, leading: 20, bottom: 50, trailing: 20))
+
+        .padding(EdgeInsets(top: 0, leading: 20, bottom: 50, trailing: 20))
     }
 }
 
@@ -53,7 +56,6 @@ struct CellView: View {
                 Text(discription)
                     .font(.body)
                     .foregroundColor(Color.gray)
-
             }
         }
     }
@@ -84,10 +86,17 @@ struct AnnounceView: View {
                      discription: "Write what you need to do in front of you and it will appear in the widget.")
         }
         VStack {
-            Text("Develop by YOR.")
+            if let url = URL(string: "https://www.youtube.com/watch?v=ZXsQAXx_ao0") {
+                Link("Inspired by Shia LaBeouf",destination: url)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.top, 24.0)
+                .padding(.bottom, 56.0)
+                .font(.callout)
+                .foregroundColor(Color.gray)
+
+            }
         }
+        DoneButton()
     }
 }
 
