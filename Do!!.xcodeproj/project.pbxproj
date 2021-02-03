@@ -11,9 +11,7 @@
 		883CFC7B25C5D05800B1F150 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883CFC7A25C5D05800B1F150 /* ContentView.swift */; };
 		883CFC7D25C5D05900B1F150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883CFC7C25C5D05900B1F150 /* Assets.xcassets */; };
 		883CFC8025C5D05900B1F150 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883CFC7F25C5D05900B1F150 /* Preview Assets.xcassets */; };
-		886CD2E825C97AEC00A357C8 /* DOIT.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 886CD2E725C97AEC00A357C8 /* DOIT.mp3 */; };
 		886CD2EB25C97B1D00A357C8 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CD2EA25C97B1D00A357C8 /* PlaySound.swift */; };
-		886CD2EE25C9902700A357C8 /* DoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CD2ED25C9902700A357C8 /* DoButton.swift */; };
 		886CD2F125C9994900A357C8 /* justdoit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 886CD2F025C9994900A357C8 /* justdoit.mp3 */; };
 		886CD2FA25C99B5500A357C8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886CD2F925C99B5500A357C8 /* WidgetKit.framework */; };
 		886CD2FC25C99B5500A357C8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886CD2FB25C99B5500A357C8 /* SwiftUI.framework */; };
@@ -22,6 +20,7 @@
 		886CD30525C99B5600A357C8 /* Do!!WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 886CD2F725C99B5500A357C8 /* Do!!WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		886CD32725C9C1C800A357C8 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CD32625C9C1C800A357C8 /* SettingView.swift */; };
 		886CD32B25C9E58700A357C8 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CD32A25C9E58700A357C8 /* Walkthrough.swift */; };
+		886CD38825CAFD3800A357C8 /* SnackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CD38725CAFD3800A357C8 /* SnackBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +54,7 @@
 		883CFC7C25C5D05900B1F150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		883CFC7F25C5D05900B1F150 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		883CFC8125C5D05900B1F150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		886CD2E725C97AEC00A357C8 /* DOIT.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = DOIT.mp3; path = Design/DOIT.mp3; sourceTree = SOURCE_ROOT; };
 		886CD2EA25C97B1D00A357C8 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
-		886CD2ED25C9902700A357C8 /* DoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoButton.swift; sourceTree = "<group>"; };
 		886CD2F025C9994900A357C8 /* justdoit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = justdoit.mp3; path = Design/justdoit.mp3; sourceTree = SOURCE_ROOT; };
 		886CD2F725C99B5500A357C8 /* Do!!WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Do!!WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		886CD2F925C99B5500A357C8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -69,6 +66,7 @@
 		886CD30F25C99C4100A357C8 /* Do!!WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Do!!WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		886CD32625C9C1C800A357C8 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		886CD32A25C9E58700A357C8 /* Walkthrough.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = "<group>"; };
+		886CD38725CAFD3800A357C8 /* SnackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,13 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				886CD30C25C99BB500A357C8 /* Do!!.entitlements */,
-				886CD2E725C97AEC00A357C8 /* DOIT.mp3 */,
 				886CD2F025C9994900A357C8 /* justdoit.mp3 */,
 				883CFC7825C5D05800B1F150 /* Do__App.swift */,
 				886CD32A25C9E58700A357C8 /* Walkthrough.swift */,
 				883CFC7A25C5D05800B1F150 /* ContentView.swift */,
+				886CD38725CAFD3800A357C8 /* SnackBarView.swift */,
 				886CD32625C9C1C800A357C8 /* SettingView.swift */,
-				886CD2ED25C9902700A357C8 /* DoButton.swift */,
 				886CD2EA25C97B1D00A357C8 /* PlaySound.swift */,
 				883CFC7C25C5D05900B1F150 /* Assets.xcassets */,
 				883CFC8125C5D05900B1F150 /* Info.plist */,
@@ -238,7 +235,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				886CD2F125C9994900A357C8 /* justdoit.mp3 in Resources */,
-				886CD2E825C97AEC00A357C8 /* DOIT.mp3 in Resources */,
 				883CFC8025C5D05900B1F150 /* Preview Assets.xcassets in Resources */,
 				883CFC7D25C5D05900B1F150 /* Assets.xcassets in Resources */,
 			);
@@ -260,9 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				886CD32B25C9E58700A357C8 /* Walkthrough.swift in Sources */,
-				886CD2EE25C9902700A357C8 /* DoButton.swift in Sources */,
 				886CD32725C9C1C800A357C8 /* SettingView.swift in Sources */,
 				883CFC7B25C5D05800B1F150 /* ContentView.swift in Sources */,
+				886CD38825CAFD3800A357C8 /* SnackBarView.swift in Sources */,
 				886CD2EB25C97B1D00A357C8 /* PlaySound.swift in Sources */,
 				883CFC7925C5D05800B1F150 /* Do__App.swift in Sources */,
 			);

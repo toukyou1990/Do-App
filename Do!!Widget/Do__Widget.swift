@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 
-var text = ""
+
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), text: "")
@@ -21,7 +21,7 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-
+        var text = ""
                 let userDefaults = UserDefaults(suiteName: "group.notty1990-gmail.com.Do--")
                 if let userDefaults = userDefaults {
                     text = userDefaults.string(forKey: "inputText") ?? ""
@@ -49,12 +49,18 @@ struct Do__WidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack{
-            Image("logoB")
-            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .opacity(0.1)
-                .padding(.bottom, 32.0)
-            Text(entry.text)
+        ZStack{
+            VStack{
+
+                Image("logoB")
+                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 70, alignment: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/)
+                    .padding(.top, 16.0)
+                    .opacity(0.25)
+                Text(entry.text)
+                    .font(.system(size: 20, weight: .bold, design: .rounded ))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .padding(.horizontal, 4.0)
+            }
         }
     }
 }

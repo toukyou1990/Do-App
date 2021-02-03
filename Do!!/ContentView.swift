@@ -11,8 +11,17 @@ import AVFoundation
 
 
 struct ContentView: View {
+    @State private var text = ""
     @State private var showingModal = false
     @State private var textField = ""
+
+    struct ScaleButtonStyle: ButtonStyle {
+        func makeBody(configuration: Self.Configuration) -> some View {
+            configuration.label
+                .scaleEffect(configuration.isPressed ? 0.85 : 1)
+        }
+    }
+
 
     var body: some View {
 
@@ -31,10 +40,11 @@ struct ContentView: View {
                             .padding(.trailing, 18.0)
                     }
                     .sheet(isPresented: $showingModal) {
-                    SettingView()
-                }
+                        SettingView()
+                    }
 
-                    TextField("What are you doing?", text: $textField)
+                    TextField("What are you doing?", text: $text)
+                        .frame(maxWidth: .infinity)
                         .font(.system(size: 32, weight: .bold, design: .rounded ))
                         .padding(.horizontal, 16.0)
                         .textFieldStyle(PlainTextFieldStyle())
@@ -44,9 +54,26 @@ struct ContentView: View {
                 }
                 Spacer()
             }
-            DoButton()
+                Button(action: {
+                    let userDefaults = UserDefaults(suiteName: "group.notty1990-gmail.com.Do--")
+                    if let userDefaults = userDefaults {
+                        userDefaults.synchronize()
+                        userDefaults.setValue(text, forKeyPath: "inputText")
+                    }
+                    WidgetCenter.shared.reloadAllTimelines()
+                    playSound(sound: "justdoit", type: "mp3")
+                }) {
+                    Image("logoB")
+                        .renderingMode(.original)
+                        .frame(alignment: .center)
+                        .scaledToFit()
+                }
+                .buttonStyle(ScaleButtonStyle())
+
+
         }
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {

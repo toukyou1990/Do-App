@@ -20,7 +20,7 @@ struct WorkThroughView: View {
             Spacer()
             DoneButton()
         }
-        .padding(EdgeInsets(top: 88, leading: 24, bottom: 50, trailing: 24))
+        .padding(EdgeInsets(top: 40, leading: 20, bottom: 50, trailing: 20))
     }
 }
 
@@ -42,11 +42,11 @@ struct CellView: View {
     let discription: String
 
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 16) {
             image
                 .font(.largeTitle)
                 .foregroundColor(.black)
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 10) {
                 Text(headline)
                     .font(.headline)
                     .bold()
@@ -72,7 +72,7 @@ struct CellView_Previews: PreviewProvider {
 
 struct AnnounceView: View {
     var body: some View {
-        VStack(alignment: .center, spacing: 44) {
+        VStack(alignment: .leading, spacing: 44) {
             CellView(image: Image(systemName: "highlighter"),
                      headline: "Don’t let your dreams be dreams",
                      discription: "Yesterday you said tomorrow")
